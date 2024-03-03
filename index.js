@@ -30,16 +30,6 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-// app.get('/vistadatos', async (req, res) => {
-//     try {
-//         const contactos = await Contacto.find();
-//         res.render('vistadatos', { contactos });
-//       } catch (err) {
-//         console.error('Error al obtener contacto:', err);
-//         res.status(500).send('Error interno del servidor');
-//       }
-// });
-
 app.post('/crear', async (req, res) => {
     try {
       const { nombre, correo, numero, mensaje, nombreempresa } = req.body;
@@ -54,40 +44,6 @@ app.post('/crear', async (req, res) => {
       res.status(500).send('Error interno del servidor');
     }
   });
-
-//   app.get('/eliminar/:id', async (req, res) => {
-//     try {
-//         await Contacto.findByIdAndDelete(req.params.id);
-//         res.status(200).send(alert('Contacto eliminado exitosamente'));
-//     } catch (err) {
-//         console.error('Error al eliminar el contacto:', err);
-//         res.status(500).send('Error interno del servidor');
-//     }
-// });
-
-// app.get('/editar/:id', async (req, res) => {
-//     try {
-//         const contacto = await Contacto.findById(req.params.id);
-//         if (!contacto) {
-//             return res.status(404).send('Contacto no encontrado');
-//         }
-//         res.render('editar', { contacto });
-//     } catch (err) {
-//         console.error('Error al editar contacto:', err);
-//         res.status(500).send('Error interno del servidor');
-//     }
-// });
-
-// app.post('/actualizar/:id', async (req, res) => {
-//     try {
-//         const { nombre, correo, numero, mensaje, nombreempresa } = req.body;
-//         await Contacto.findByIdAndUpdate(req.params.id, { nombre, correo, numero, mensaje, nombreempresa });
-//         res.redirect('/vistadatos');
-//     } catch (err) {
-//         console.error('Error al actualizar el contacto:', err);
-//         res.status(500).send('Error interno del servidor');
-//     }
-// });
 
 app.listen(port, () => {
     console.log(`servidor en: ${port}`);
