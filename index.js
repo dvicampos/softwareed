@@ -30,6 +30,16 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/vistadatos', async (req, res) => {
+    try {
+        const contactos = await contacto.find();
+        res.render('vistadatos', { contactos });
+      } catch (err) {
+        console.error('Error al obtener contacto:', err);
+        res.status(500).send('Error interno del servidor');
+      }
+});
+
 app.post('/crear', async (req, res) => {
     try {
       const { nombre, correo, numero, mensaje, nombreempresa } = req.body;

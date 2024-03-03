@@ -455,3 +455,40 @@ footer .copyright {
 	animation-name: modalFadeIn;
 	animation-duration: 0.3s;
   }
+
+
+
+styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 8px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #333;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table a {
+    text-decoration: none;
+    color: #007BFF;
+    margin-right: 10px;
+}
+.dashboard{
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
