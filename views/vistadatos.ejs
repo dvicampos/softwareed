@@ -18,6 +18,8 @@
                         <th>Numero</th>
                         <th>Nombre de empresa</th>
                         <th>Mensaje</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,13 +42,14 @@
                         </td>
                         
                         <td>
-                            <a class="custom-tooltip" href="/contacto/editar/<%= contacto._id %>" data-tooltip="Editar">
+                            <a class="editar" href="/editar/<%= contacto._id %>">
                                 <img class="imagen-icon" src="/img/editar.png" alt="editar">
                             </a>
-                            <form action="/contactos/<%= contacto._id %>" method="POST" style="display: inline;">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit">Eliminar</button>
-                            </form>
+                        </td>
+                        <td>
+                            <a class="eliminar" href="/eliminar/<%= contacto._id %>">
+                                <img class="imagen-icon" src="/img/borrar.png" alt="borrar">
+                            </a>
                         </td>
                     </tr>
                     <% }); %>

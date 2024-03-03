@@ -20,7 +20,7 @@ const contactoSchema = new mongoose.Schema({
     mensaje: String,
     nombreempresa: String
 });
-const contacto = mongoose.model('contacto', contactoSchema);
+const Contacto = mongoose.model('Contacto', contactoSchema);
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 app.get('/vistadatos', async (req, res) => {
     try {
-        const contactos = await contacto.find();
+        const contactos = await Contacto.find();
         res.render('vistadatos', { contactos });
       } catch (err) {
         console.error('Error al obtener contacto:', err);
@@ -43,7 +43,7 @@ app.get('/vistadatos', async (req, res) => {
 app.post('/crear', async (req, res) => {
     try {
       const { nombre, correo, numero, mensaje, nombreempresa } = req.body;
-      const nuevocontacto = new contacto({ nombre, correo, numero, mensaje, nombreempresa });
+      const nuevocontacto = new Contacto({ nombre, correo, numero, mensaje, nombreempresa });
       await nuevocontacto.save();
       console.log("guardado")
       setTimeout(() => {
@@ -54,6 +54,40 @@ app.post('/crear', async (req, res) => {
       res.status(500).send('Error interno del servidor');
     }
   });
+
+  app.get('/eliminar/:id', async (req, res) => {
+    try {
+        await Contacto.findByIdAndDelete(req.params.id);
+        res.status(200).send(alert('Contacto eliminado exitosamente'));
+    } catch (err) {
+        console.error('Error al eliminar el contacto:', err);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
+app.get('/editar/:id', async (req, res) => {
+    try {
+        const contacto = await Contacto.findById(req.params.id);
+        if (!contacto) {
+            return res.status(404).send('Contacto no encontrado');
+        }
+        res.render('editar', { contacto });
+    } catch (err) {
+        console.error('Error al editar contacto:', err);
+        res.status(500).send('Error interno del servidor');
+    }
+});
+
+app.post('/actualizar/:id', async (req, res) => {
+    try {
+        const { nombre, correo, numero, mensaje, nombreempresa } = req.body;
+        await Contacto.findByIdAndUpdate(req.params.id, { nombre, correo, numero, mensaje, nombreempresa });
+        res.redirect('/vistadatos');
+    } catch (err) {
+        console.error('Error al actualizar el contacto:', err);
+        res.status(500).send('Error interno del servidor');
+    }
+});
 
 app.listen(port, () => {
     console.log(`servidor en: ${port}`);
