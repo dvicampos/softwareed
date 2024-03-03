@@ -5,6 +5,7 @@ $(document).ready(function(){
 		planes = $('#planes').offset().top,
 		galeria = $('#galeria').offset().top,
 		contacto = $('#contacto').offset().top;
+		nosotros = $('#nosotros').offset().top;
 
 // Boton Acerca de
 	$('#btn-acerca-de').on('click', function(e){
@@ -32,6 +33,13 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('html, body').animate({
 			scrollTop: contacto - 40
+		});
+	});
+
+	$('#btn-nosotros').on('click', function(e){
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: nosotros - 40
 		});
 	});
 

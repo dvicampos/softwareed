@@ -492,3 +492,25 @@ styled-table {
 	justify-content: center;
 	flex-direction: column;
 }
+.nosotros{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 50px;
+}
+.programador {
+	width: 45%;
+	margin-right: 5%;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+  }
+  
+  .programador:last-child {
+	margin-right: 0;
+  }
+  .fotos{
+	width: 20%;
+  }
+  
