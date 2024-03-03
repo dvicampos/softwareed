@@ -299,6 +299,7 @@ footer .copyright {
 	border: none;
 	border-radius: 3px;
 	padding: 15px 40px;
+	font-size: 20px;
 }
 
 .contacto .formulario .boton:hover {
@@ -513,4 +514,22 @@ styled-table {
   .fotos{
 	width: 20%;
   }
-  
+  .social{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px;
+}
+.tituloredes{
+	color: #ccc;
+	text-align: center;
+  }
+  .social-personal{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+  }
+  .errorllenado{
+	color: #ff0000;
+	font-weight: bold;
+  }

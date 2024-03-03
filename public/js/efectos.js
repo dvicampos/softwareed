@@ -77,10 +77,42 @@ function showModal(message) {
 	modalMessage.textContent = message;
 	modal.style.display = 'block';
   }
-  
+
   document.getElementById('openModalBtn').onclick = function() {
-	showModal('Contacto creado exitosamente');
-  };
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const numero = document.getElementById('numero').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+    const nombreempresa = document.getElementById('nombreempresa').value.trim();
+    var elementoError = document.querySelector('.errorllenado');
+
+    if (nombre !== '' && correo !== '' && numero !== '' && nombreempresa !== '') {
+        showModal('Contacto creado exitosamente');
+    } else {
+        let mensajeError = '';
+
+        if (nombre === '') {
+            mensajeError += 'Falta llenar el campo de nombre.<br>';
+        }
+        if (correo === '') {
+            mensajeError += 'Falta llenar el campo de correo.<br>';
+        }
+        if (numero === '') {
+            mensajeError += 'Falta llenar el campo de número.<br>';
+        }
+        if (nombreempresa === '') {
+            mensajeError += 'Falta llenar el campo de nombre de la empresa.<br>';
+        }
+        if (mensaje === '') {
+            mensajeError += 'Falta llenar el campo de mensaje.<br>';
+        }
+
+        elementoError.innerHTML = mensajeError;
+    }
+};
+
+
+
   
   document.getElementsByClassName('close')[0].onclick = function() {
 	const modal = document.getElementById('myModal');

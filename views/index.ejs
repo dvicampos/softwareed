@@ -122,13 +122,14 @@
 				<section class="contacto">
 					<h3 class="titulo">Contacto</h3>
 					<form class="formulario" action="/crear" method="POST">
-						<input type="text" placeholder="Nombre" name="nombre" required>
-						<input type="email" placeholder="Correo" name="correo" required>
-                        <input type="number" name="numero" placeholder="Numero" required>
-                        <input type="text" name="nombreempresa" placeholder="Nombre de empresa" required>
-						<textarea name="mensaje" placeholder="Mensaje:" required></textarea>
-						<button type="submit" id="openModalBtn">Enviar</button>
+						<input type="text" placeholder="Nombre (*)" name="nombre" id="nombre" required>
+						<input type="email" placeholder="Correo (*)" name="correo" id="correo" required>
+                        <input type="number" name="numero" placeholder="Numero (*)" id="numero" required>
+                        <input type="text" name="nombreempresa" placeholder="Nombre de empresa (*)" id="nombreempresa" required>
+						<textarea name="mensaje" placeholder="Mensaje (*)" id="mensaje" required></textarea>
+                        <button class="boton" type="submit" id="openModalBtn">Enviar</button>
 					</form>
+                    <div class="errorllenado"></div>
 				</section>
 			</div>
 		</section>
@@ -147,6 +148,12 @@
                     ONE - Oracle Next Education en la Generacion 5.</p>
                     <p>Experiencia: 3 años</p>
                     <img class="fotos" src="img/david.jpeg" alt="">
+                    <hr>
+                <h2>Redes sociales personales</h2>
+                <div class="social-personal">
+                    <a class="github" href="https://github.com/dvicampos"><img src="img/github.png" alt=""></a>
+                    <a class="linkedin" href="https://www.linkedin.com/in/angeldavidcampos02/"><img src="img/linkedin.png" alt=""></a>
+                </div>
               </div>
               <div class="programador">
                 <h2>Ing. José Eduardo Salazar Tecuapacho</h2>
@@ -161,6 +168,12 @@
                 </p>
                     <p>Experiencia: 4 años</p>
                     <img class="fotos" src="img/eduardo.jpeg" alt="">
+                <hr>
+                <h2>Redes sociales personales</h2>
+                <div class="social-personal">
+                    <a class="github" href="https://github.com/LaloST107"><img src="img/github.png" alt=""></a>
+                    <a class="linkedin" href="https://www.linkedin.com/in/jos%C3%A9-eduardo-salazar-tecuapacho-a672791bb/"><img src="img/linkedin.png" alt=""></a>
+                </div>
               </div>
 		</section>
 
@@ -177,6 +190,12 @@
 
 	<footer>
 		<div class="contenedor">
+            <h2 class="tituloredes">Redes sociales de SOFTWARE ED</h2>
+            <div class="social">
+                <a class="facebook" href="#"><img src="img/facebook.png" alt=""></a>
+                <a class="linkedin" href="#"><img src="img/linkedin.png" alt=""></a>
+                <a class="instagram" href="#"><img src="img/instagram.png" alt=""></a>
+            </div>
 			<div class="copyright">
 				<p>Copyright SOFTWARE ED</p>
 			</div>
