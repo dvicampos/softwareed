@@ -76,11 +76,6 @@ header .textos h3 {
 }
 
 /* ----- ----- MAIN ----- ----- */
-.main {
-	background: url('../img/bg-textura.png');
-	background-repeat: repeat;
-}
-
 .main .acerca-de .contenedor {
 	overflow: visible;
 	position: relative;
@@ -139,56 +134,78 @@ header .textos h3 {
 	margin-bottom: 40px;
 }
 
-.main .planes .contenedor-planes {
-	border: 1px solid #000;
-	background: transparent;
-	padding: 10px;
-	overflow: hidden;
+.main .planes .conplanes {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Modificado para centrar los planes */
+    background: url(../img/planes.jpg);
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: center 0;
 }
 
-.main .planes article {
-	width: 50%;
-	float: left;
+.main .planes .conplanes::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+}
+
+.main .planes .conplanes .plan {
+	z-index: 1;
+	width: 20%;
+	height: 500px;
+	background-color: #fff;
+	border-radius: 5px;
 	padding: 20px;
-}
-
-.main .planes article .categoria {
-	font-size: 22px;
-	font-weight: 700;
-	margin-bottom: 40px;
 	text-align: center;
+	transition: all 1s ease;
+	margin: 50px;
+}
+.main .planes .conplanes .plan:last-child {
+	width: calc(100% - 500px); 
+	height: 10%;
+	background-color: #110606;
+	color: #ddd;
+  }
+.main .planes .conplanes .plan:hover {
+	/* border: 1px solid #770808; */
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	transform: scale(1.2);
 }
 
-.main .planes article .plan {
-	overflow: hidden;
-	margin: 30px;
-	padding: 20px;
-	border: 4px outset #110606;
+.main .planes .conplanes .plan .nombre,
+.precio {
+	height: 20%;
+	border-bottom: 2px solid #ccc;
+	font-weight: 300;
+	font-size: 28px;
+	margin-bottom: 30px;
 }
 
-.main .planes article .nombre {
-	font-size: 20px;
-	margin-bottom: 15px;
-	float: left;
+.main .planes .conplanes .descripcion {
+	height: 30%;
+	padding: 0 20px;
+	margin-bottom: 10px;
 }
 
-.main .planes article .precio {
-	float: right;
-	font-size: 20px;
-	margin-bottom: 15px;
+.main .planes .conplanes .web {
+	color: #c2c809;
 }
 
-.main .planes article .descripcion {
-	font-size: 16px;
-	color: #676767;
-	clear: both;
+.main .planes .conplanes .app {
+	background-color: #4c8dce;
+	color: #f2f2f2;
 }
 
-.main .planes .contenedor-planes2 {
-	border: 1px solid #000;
-	background: transparent;
-	padding: 10px;
-	overflow: hidden;
+.main .planes .conplanes .administrable {
+	color: #295909;
 }
 
 .main .galeria {
@@ -200,14 +217,16 @@ header .textos h3 {
 	float: left;
 	position: relative;
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 }
-.texto{
+
+.texto {
 	position: absolute;
 	font-size: 30px;
 	color: #03193d;
 	overflow: hidden;
+	transition: all 1s ease;
 }
 
 .main .galeria .foto img {
@@ -218,13 +237,20 @@ header .textos h3 {
 
 .main .galeria .foto img:hover {
 	opacity: 1;
-	-webkit-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
+	cursor: pointer;
 }
+
+.foto:hover .texto {
+	opacity: 1;
+	color: rgb(255, 255, 255);
+	transform: rotate(360deg);
+	z-index: 3;
+	cursor: not-allowed;
+}
+
 /* ----- ----- FOOTER ----- ----- */
 footer {
-	background: #000;
+	background: rgba(0, 0, 0, 0.7);
 }
 
 footer .copyright {
@@ -233,21 +259,9 @@ footer .copyright {
 	color: #fff;
 }
 
-/* --------------------NOTA----------------------- */
-.nota {
-	margin: 30px;
-	padding: 20px;
-	border: 4px dotted #110606;
-}
-
-.nota h2 {
-	text-align: center;
-	margin-bottom: 10px;
-}
-
 /* ------CONTACTO ------ */
 .contacto {
-	padding: 60px 0;
+	padding: 30px 0;
 }
 
 .contacto .titulo {
@@ -306,8 +320,31 @@ footer .copyright {
 	background: #387bea;
 	cursor: pointer;
 }
+.contacto-directo{
+	text-align: center;
+	margin-bottom: 50px;
+}
+.contacto-directo p{
+	margin: 10px;	
+	color: #03193d;
+}
+.contacto-directo h3{	
+	color: #333;
+}
 
 /* ----- ----- MEDIA QUERIES ----- ----- */
+
+@media screen and (max-width: 1000px) {
+	.main .planes .conplanes .plan {
+		display: flex;
+		flex-direction: column;
+        width: 80%; /* Reducir el ancho de los planes en pantallas medianas */
+    }
+
+    .main .planes .conplanes .plan:last-child {
+        width: 90%; /* Ajustar el ancho del último plan en pantallas medianas */
+    }
+}
 @media screen and (max-width: 800px) {
 	header .contenedor {
 		position: static;
@@ -363,6 +400,25 @@ footer .copyright {
 		width: 80%;
 		margin: auto;
 	}
+	.main .planes .conplanes .plan {
+        width: 80%; /* Reducir el ancho de los planes en pantallas medianas */
+    }
+
+    .main .planes .conplanes .plan:last-child {
+        width: 90%; /* Ajustar el ancho del último plan en pantallas medianas */
+    }
+	.nosotros{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.nosotros .programador{
+		margin-top: 20px;
+		width: 90%;
+		margin-right: 0px;
+		/* background-color: #000; */
+	}
 }
 
 @media screen and (max-width: 400px) {
@@ -392,174 +448,245 @@ footer .copyright {
 		width: 100%;
 		margin-bottom: 10px;
 	}
+	.main .planes .conplanes .plan {
+        width: 90%;
+    }
+
+    .main .planes .conplanes .plan:last-child {
+        width: 100%;
+    }
 }
 
 
 .modal {
-	display: none; 
-	position: fixed; 
-	z-index: 1; 
+	display: none;
+	position: fixed;
+	z-index: 1;
 	left: 0;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.4); 
-  }
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
 .modal-content {
-	background-color: #03193d; 
-	color: #ffffff; 
+	background-color: #03193d;
+	color: #ffffff;
 	margin: 15% auto;
 	padding: 20px;
-	border: 1px solid #3895ea; 
+	border: 1px solid #3895ea;
 	width: 80%;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 20px;
-  }
-  
-  .close {
-	color: #ffffff; 
+}
+
+.close {
+	color: #ffffff;
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
-  }
-  
-  #openModalBtn {
-	background-color: #3895ea; 
-	color: #ffffff; 
+}
+
+#openModalBtn {
+	background-color: #3895ea;
+	color: #ffffff;
 	width: 100px;
 	padding: 10px 20px;
 	cursor: pointer;
 	border: #03193d;
 	border-radius: 10px;
 	transition: all 1s;
-  }
-  #openModalBtn:hover{
-	background-color: #ffffff; 
+}
+
+#openModalBtn:hover {
+	background-color: #ffffff;
 	color: #03193d;
-  }
-  
-  .close:hover,
-  .close:focus {
-	color: #ff0000; 
+	box-shadow: 0px 10px 20px rgba(2, 12, 82, 0.7);
+}
+
+.close:hover,
+.close:focus {
+	color: #ff0000;
 	cursor: pointer;
-  }
-  
-  @keyframes modalFadeIn {
-	from {opacity: 0;}
-	to {opacity: 1;}
-  }
-  
-  .modal {
+}
+
+@keyframes modalFadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.modal {
 	animation-name: modalFadeIn;
 	animation-duration: 0.3s;
-  }
+}
 
 
 
 styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 8px 12px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    border-left: 1px solid #333;
+	padding: 8px 12px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #333;
 }
 
 .styled-table th {
-    background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 .styled-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 .styled-table a {
-    text-decoration: none;
-    color: #007BFF;
-    margin-right: 10px;
+	text-decoration: none;
+	color: #007BFF;
+	margin-right: 10px;
 }
-.dashboard{
+
+.dashboard {
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-.nosotros{
+
+.nosotros {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 50px;
 }
+
 .programador {
 	width: 45%;
+	height: 500px;
 	margin-right: 5%;
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	text-align: center;
-  }
-  
-  .programador:last-child {
-	margin-right: 0;
-  }
-  .fotos{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 1s ease;
+}
+.programador:hover{
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+}
+
+.programador:hover .fotos{
 	width: 20%;
-  }
-  .social{
+	transform: scale(1.2);
+}
+.seccionar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.programador:last-child {
+	margin-right: 0;
+}
+
+.fotos {
+	width: 35%;
+	margin-left: 10%;
+	border-radius: 10px;
+	transition: all 1s ease;
+}
+.texto-nosotros{
+	width: 60%;
+	height: 30%;
+	transition: all 1s ease;
+}
+
+.social {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 20px;
 }
-.tituloredes{
+
+.tituloredes {
 	color: #ccc;
 	text-align: center;
-  }
-  .social-personal{
+}
+
+.social-personal {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
-  }
-  .errorllenado{
+}
+
+.errorllenado {
 	color: #ff0000;
 	font-weight: bold;
-  }
-  .titulonosotros{
+}
+
+.titulonosotros {
 	font-size: 40px;
 	font-weight: 300;
 	text-align: center;
-	margin-bottom: 40px;
-  }
-  .scroll-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    text-decoration: none;
-    transition: opacity 0.3s;
+	margin: 40px;
+}
+
+.scroll-to-top {
+	z-index: 2;
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #007bff;
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	text-decoration: none;
+	transition: opacity 0.3s;
 }
 
 .scroll-to-top:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
 
-.img-inicio{
-	width: 16px;
+.img-inicio {
+	z-index: 3;
+	width: 20px;
+}
+/* seccion preguntas frecuentes */
+.preguntas{
+	margin-bottom: 20px;
+}
+.accordion-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.accordion-content {
+    padding: 10px;
+    display: none;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
 }

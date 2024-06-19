@@ -1,215 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,300italic,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/estilos.css">
-	<title>SOFTWARE ED</title>
-    <link rel="icon" type="image/png" href="img/logo.png"/>
-</head>
-<body>
-    <a href="/" class="scroll-to-top"><img class="img-inicio" src="img/inicio.png" alt=""></a>
-	<header>
-		<div class="contenedor">
-			<nav class="planes">
-				<a href="#" id="btn-acerca-de">Acerca de</a>
-				<a href="#" id="btn-planes">Planes</a>
-				<a href="#" id="btn-galeria">Valores</a>
-				<a href="#" id="btn-contacto">Contacto</a>
-                <a href="#" id="btn-nosotros">Nosotros</a>
-			</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,300italic,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>SOFTWARE ED</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+  </head>
+  <body>
+    <a href="/" class="scroll-to-top"
+      ><img class="img-inicio" src="img/inicio.png" alt=""
+    /></a>
+    <header>
+      <div class="contenedor">
+        <nav class="planes">
+          <a href="#" id="btn-acerca-de">Acerca de</a>
+          <a href="#" id="btn-planes">Planes</a>
+          <a href="#" id="btn-galeria">Valores</a>
+          <a href="#" id="btn-nosotros">Mision/Vision</a>
+          <a href="#" id="btn-contacto">Contacto</a>
+        </nav>
 
-			<div class="textos">
-				<h1 class="nombre"><span>SOFTWARE</span> ED</h1>
-				<h3>Desarrolladores freelancer</h3>
-			</div>
-		</div>
-	</header>
-
-	<section class="main">
-		<section class="acerca-de" id="acerca-de">
-			<div class="contenedor">
-				<div class="foto">
-					<img src="img/fp.jpg" alt="">
-				</div>
-				<article>
-					<h3>Acerca de</h3>
-					<p>Somos unos jovenes desarrolladores y entusiastas que buscamos poder apoyar y crear todo lo real que nuestros clientes puedan imaginar.</p>
-				
-					<p>Estamos comprometidos a cumplir con las expectativas de nuestro cliente y que puedan hacerce mas conocidos por medio de su sitio web.</p>
-				</article>
-			</div>
-		</section>
-
-		<section class="planes">
-			<div class="contenedor">
-				<h3 class="titulo" id="planes">Planes</h3>
-				<div class="contenedor-planes">
-					<div class="contenedor-planes2">
-						<article>
-							<p class="categoria">Sitios web estaticos</p>
-							<div class="plan">
-								<p class="nombre">Pagina web clasica</p>
-								<p class="precio">$1500</p>
-								<p class="descripcion">Pagina web que solo contendra dos redirecciones a paginas que se nos pidan crear.</p>
-							</div>
-							<div class="plan">
-								<p class="nombre">Sitio web con redirecciones</p>
-								<p class="precio">$2800</p>
-								<p class="descripcion">Sitio web con al menos 5 redirecciones las cuales pueden ser paginas que se nos pidan crear.</p>
-							</div>
-						</article>
-						
-						<article>
-							<p class="categoria">Sitios web administrables</p>
-							<div class="plan">
-								<p class="nombre">Sitio administrable PyMes</p>
-								<p class="precio">$8800</p>
-								<p class="descripcion">Sitio web administrable de una PyMes donde pueda publicar sus productos con roles como administrador y usuarios.</p>
-							</div>
-							<div class="plan">
-								<p class="nombre">Blog personal</p>
-								<p class="precio">$5800</p>
-								<p class="descripcion">Blog personal para su uso personal conectado a una base de datos con un solo rol de administrador.</p>
-							</div>
-						</article>
-					</div>
-					<div class="nota">
-						<h2 class=titulo-nota>Nota</h2>
-						<p>Estos son los planes de una manera general pero nos podemos ajustar a sus necesidades contactandonos en la seccion de contacto</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="galeria" id="galeria">
-			<div class="foto">
-				<p class="texto">PUNTUALIDAD</p>
-				<img src="img/1.jpg" alt="">
-			</div>
-			<div class="foto">
-				<p class="texto">RESPETO</p>
-				<img src="img/2.jpg" alt="">
-			</div>
-			<div class="foto">
-				<p class="texto">COLABORACION</p>
-				<img src="img/3.jpg" alt="">
-			</div>
-			<div class="foto">
-				<p class="texto">ORGANIZACION</p>
-				<img src="img/4.jpg" alt="">
-			</div>
-			<div class="foto">
-				<p class="texto">AGILIDAD</p>
-				<img src="img/5.jpg" alt="">
-			</div>
-			<div class="foto">
-				<p class="texto">INNOVACION</p>
-				<img src="img/6.jpg" alt="">
-			</div>
-			<div class="foto">
-				<p class="texto">ORIENTACION</p>
-				<img src="img/7.jpg" alt="">
-			</div>
-			<div class="foto">
-				<p class="texto">CALIDAD</p>
-				<img src="img/8.jpg" alt="">
-			</div>
-		</section>
-
-		<section class="contacto" id="contacto">
-			<div class="contenedor">
-				<section class="contacto">
-					<h3 class="titulo">Contacto</h3>
-					<form class="formulario" action="/crear" method="POST">
-						<input type="text" placeholder="Nombre (*)" name="nombre" id="nombre" required>
-						<input type="email" placeholder="Correo (*)" name="correo" id="correo" required>
-                        <input type="number" name="numero" placeholder="Numero (*)" id="numero" required>
-                        <input type="text" name="nombreempresa" placeholder="Nombre de empresa (*)" id="nombreempresa" required>
-						<textarea name="mensaje" placeholder="Mensaje (*)" id="mensaje" required></textarea>
-                        <button class="boton" type="submit" id="openModalBtn">Enviar</button>
-					</form>
-                    <div class="errorllenado"></div>
-				</section>
-			</div>
-		</section>
-        
-        <section id="nosotros">
-            <div class="titulonosotros">
-                <h3 class="titulo">Nosotros</h3>
-            </div>
-            <div class="nosotros">
-			<div class="programador">
-                <h2>Ing. Angel David Aranda Campos</h2>
-                <P>CEO</P>
-                <p> Ingenierio en
-                    Tecnologias de la Informacion me desempeño en el desarrollo web y he participado en competencias de programacion
-                    asi como conferencias de Google y en proyectos innovadores en apoyo al estado en el que radico,
-                    con conocimientos en
-                    diversas tecnologías con lenguajes de programacion
-                    por ejemplo algunos son Python, Java,
-                    Javascript, TypeScript y PHP, actualmente soy ALUMNI del programa
-                    ONE - Oracle Next Education en la Generacion 5.</p>
-                    <p>Experiencia: 3 años</p>
-                    <img class="fotos" src="img/david.jpeg" alt="">
-                    <hr>
-                <h2>Redes sociales personales</h2>
-                <div class="social-personal">
-                    <a class="github" href="https://github.com/dvicampos"><img src="img/github.png" alt=""></a>
-                    <a class="linkedin" href="https://www.linkedin.com/in/angeldavidcampos02/"><img src="img/linkedin.png" alt=""></a>
-                </div>
-              </div>
-              <div class="programador">
-                <h2>Ing. José Eduardo Salazar Tecuapacho</h2>
-                <P>CTO</P>
-                <p> Ingenierio en
-                    Tecnologias de la Informacion con experiencia en desarrollo
-                    de software con lengaujes cmo Java, Javascript y Python actualmente
-                    cuento con diversa certificaciones de desarrolo de software.
-                    Desarrollo mis habilidades a traves de experiencia en empresas asi como
-                    cursos de capacitacion para seguir aprendiendo.
-                    Soy una apacionado de la programacion.
-                </p>
-                    <p>Experiencia: 4 años</p>
-                    <img class="fotos" src="img/eduardo.jpeg" alt="">
-                <hr>
-                <h2>Redes sociales personales</h2>
-                <div class="social-personal">
-                    <a class="github" href="https://github.com/LaloST107"><img src="img/github.png" alt=""></a>
-                    <a class="linkedin" href="https://www.linkedin.com/in/jos%C3%A9-eduardo-salazar-tecuapacho-a672791bb/"><img src="img/linkedin.png" alt=""></a>
-                </div>
-              </div>
-            </div>
-		</section>
-
-    </section>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="modalMessage">Exito al guardar sus datos</p>
-          <img src="img/exito.png" alt="">
-          <p id="modalMessage">En breve la informacion sera procesada y nos comunicaremos con usted</p>
-          <p id="modalMessage">¡Muchas gracias! <img src="img/sonreir.png" alt=""></p>
+        <div class="textos">
+          <h1 class="nombre"><span>DAVANI</span> SOFTWARE</h1>
+          <h3>Desarrolladores freelancer</h3>
         </div>
       </div>
+    </header>
 
-	<footer>
-		<div class="contenedor">
-            <h2 class="tituloredes">Redes sociales de SOFTWARE ED</h2>
-            <div class="social">
-                <a class="facebook" href="#"><img src="img/facebook.png" alt=""></a>
-                <a class="linkedin" href="#"><img src="img/linkedin.png" alt=""></a>
-                <a class="instagram" href="#"><img src="img/instagram.png" alt=""></a>
+    <section class="main">
+      <section class="acerca-de" id="acerca-de">
+        <div class="contenedor">
+          <div class="foto">
+            <img src="img/fp.jpg" alt="" />
+          </div>
+          <article>
+            <h3>Acerca de</h3>
+            <p>
+              Somos unos jovenes desarrolladores y entusiastas que buscamos
+              poder apoyar y crear todo lo real que nuestros clientes puedan
+              imaginar.
+            </p>
+
+            <p>
+              Estamos comprometidos a cumplir con las expectativas de nuestro
+              cliente y que puedan hacerce mas conocidos por medio de su sitio
+              web.
+            </p>
+            <p>
+              Asi como hacer realidad sus sueños y pueda volar su imaginacion en
+              un sitio web de sus sueños o poder asesorar en un sitio web
+              llamativo para poder atraer mas clientes a su negocio o poder
+              tener una mejor administracion de su negocio.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="planes">
+        <h3 class="titulo" id="planes">¿QUE SERVICIOS OFRECEMOS?</h3>
+        <div class="conplanes">
+          <div class="plan web">
+            <p class="nombre">Pagina web clasica</p>
+            <p class="precio">$1900</p>
+            <p class="descripcion">
+              Pagina web que solo contendra dos redirecciones a paginas que se
+              nos pidan crear.
+            </p>
+          </div>
+          <div class="plan app">
+            <p class="nombre">Punto de venta o ecommerce</p>
+            <p class="precio">$3700</p>
+            <p class="descripcion">
+              Consta de un software el cual ayudara a su empresa a poder llevar
+              el control de sus ventas registrando sus ventas y sus gastos
+            </p>
+          </div>
+          <div class="plan administrable">
+            <p class="nombre">Sitio administrable o blog</p>
+            <p class="precio">$2950</p>
+            <p class="descripcion">
+              Sitio web administrable de una PyMes donde pueda publicar sus
+              productos con roles como administrador y usuarios.
+            </p>
+          </div>
+          <div class="plan">
+            <p>
+              Estos planes son de manera general pero puede comunicarse con
+              nosotros para ajustarnos a un mejor precio para usted en el area
+              de contacto
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contenedor galeria" id="galeria">
+        <h3 class="titulonosotros">NUESTROS VALORES</h3>
+        <div class="foto">
+          <p class="texto">PUNTUALIDAD</p>
+          <img src="img/1.jpg" alt="" />
+        </div>
+        <div class="foto">
+          <p class="texto">RESPETO</p>
+          <img src="img/2.jpg" alt="" />
+        </div>
+        <div class="foto">
+          <p class="texto">COLABORACION</p>
+          <img src="img/3.jpg" alt="" />
+        </div>
+        <div class="foto">
+          <p class="texto">ORGANIZACION</p>
+          <img src="img/4.jpg" alt="" />
+        </div>
+        <div class="foto">
+          <p class="texto">AGILIDAD</p>
+          <img src="img/5.jpg" alt="" />
+        </div>
+        <div class="foto">
+          <p class="texto">INNOVACION</p>
+          <img src="img/6.jpg" alt="" />
+        </div>
+        <div class="foto">
+          <p class="texto">ORIENTACION</p>
+          <img src="img/7.jpg" alt="" />
+        </div>
+        <div class="foto">
+          <p class="texto">CALIDAD</p>
+          <img src="img/8.jpg" alt="" />
+        </div>
+      </section>
+
+      <section id="nosotros">
+        <div class="titulonosotros">
+          <h3 class="titulo">NUESTRA MISION Y VISION</h3>
+        </div>
+        <div class="nosotros">
+          <div class="programador">
+            <div class="seccionar">
+              <div class="texto-nosotros">
+                <h2>MISION</h2>
+                <p>
+                  Ser una empresa de desarrollo de software líder, conformada
+                  por un equipo joven y entusiasta, comprometidos en apoyar y
+                  materializar las ideas de nuestros clientes, convirtiendo sus
+                  visiones en realidades digitales. Nos esforzamos por superar
+                  las expectativas de nuestros clientes, ofreciendo soluciones
+                  creativas y funcionales que les permitan destacarse y crecer
+                  en el mundo online.
+                </p>
+              </div>
+              <img class="fotos" src="img/mision.jpg" alt="" />
             </div>
-			<div class="copyright">
-				<p>Copyright SOFTWARE ED</p>
-			</div>
-		</div>
-	</footer>
+          </div>
+          <div class="programador">
+            <div class="seccionar">
+              <div class="texto-nosotros">
+                <h2>VISION</h2>
+                <p>
+                  Nos visualizamos como la opción preferida de los clientes que
+                  buscan materializar sus ideas en el mundo digital. Buscamos
+                  ser reconocidos por nuestra creatividad, calidad y compromiso
+                  con la satisfacción del cliente. Aspiramos a expandir nuestra
+                  presencia y consolidarnos como referentes en el desarrollo de
+                  software, contribuyendo al éxito y visibilidad de nuestros
+                  clientes en línea.
+                </p>
+              </div>
+              <img class="fotos" src="img/vision.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-	<script src="js/jquery-1.12.3.min.js"></script>
-	<script src="js/parallax.js"></script>
-	<script src="js/efectos.js"></script>
-</body>
+      <section class="contacto" id="contacto">
+        <div class="contenedor">
+          <section class="contacto">
+            <h3 class="titulo">Contacto</h3>
+            <form class="formulario" action="/crear" method="POST">
+              <input
+                type="text"
+                placeholder="Nombre (*)"
+                name="nombre"
+                id="nombre"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Correo (*)"
+                name="correo"
+                id="correo"
+                required
+              />
+              <input
+                type="number"
+                name="numero"
+                placeholder="Numero (*)"
+                id="numero"
+                required
+              />
+              <input
+                type="text"
+                name="nombreempresa"
+                placeholder="Nombre de empresa (*)"
+                id="nombreempresa"
+                required
+              />
+              <textarea
+                name="mensaje"
+                placeholder="Mensaje (*)"
+                id="mensaje"
+                required
+              ></textarea>
+              <button class="boton" type="submit" id="openModalBtn">
+                Enviar
+              </button>
+            </form>
+            <div class="errorllenado"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="contacto-directo">
+        <h2>Contacto directo</h2>
+        <div class="seccionar">
+          <h3>Correo:</h3>
+          <p>recursoshumanos@davanisoftware.com</p>
+        </div>
+        <div class="seccionar">
+          <h3>Numero de telefono:</h3>
+          <p>2461038844</p>
+        </div>
+      </section>
+      <!--seccion preguntas frecuentes-->
+      <section class="contenedor preguntas">
+        <h1>Preguntas Frecuentes</h1>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">¿Como puedo contactarlos?</div>
+            <div class="accordion-content">
+              Pueden contactarnos por medio de nuestro apartado de contacto en el cual nosotostros nos comunicaremos con usted para una mejor atencion.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Qué servicios mas ofrecen?</div>
+            <div class="accordion-content">
+              Nosotros nos adapatmos a lo que usted como cliente necesite asi sea un software, web app, un sitio para citas en su negocio.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">¿Qué mas ofecen?</div>
+            <div class="accordion-content">
+              Nosotros desarrollamos el software y le daremos un manual de usuario en archivo PDF para un correcto uso del mismo asi como asesoramiento y apoyo en cambios los cuales puede incluir un costo muy menor.
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modalMessage">Exito al guardar sus datos</p>
+        <img src="img/exito.png" alt="" />
+        <p id="modalMessage">
+          En breve la informacion sera procesada y nos comunicaremos con usted
+        </p>
+        <p id="modalMessage">
+          ¡Muchas gracias! <img src="img/sonreir.png" alt="" />
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="contenedor">
+        <h2 class="tituloredes">Redes sociales de DAVANI SOFTWARE</h2>
+        <div class="social">
+          <a class="facebook" href="#"><img src="img/facebook.png" alt="" /></a>
+          <a class="linkedin" href="#"><img src="img/linkedin.png" alt="" /></a>
+          <a class="instagram" href="#"
+            ><img src="img/instagram.png" alt=""
+          /></a>
+        </div>
+        <div class="copyright">
+          <p>Copyright DAVANI SOFTWARE</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/efectos.js"></script>
+  </body>
 </html>

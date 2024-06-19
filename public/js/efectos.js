@@ -141,3 +141,13 @@ document.querySelector('.scroll-to-top').addEventListener('click', function() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+// seccion de preguntas frecuentes 
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        item.addEventListener('click', function () {
+            item.classList.toggle('active');
+        });
+    });
+});
