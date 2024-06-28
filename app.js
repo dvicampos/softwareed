@@ -11,7 +11,7 @@ mongoose.connect(mongoURI, {
     useUnifiedTopology: true
 })
 .then(() => console.log('Conexión a MongoDB Atlas exitosa'))
-.catch(err => console.log(err));
+.catch(err => console.log('Error al conectar a MongoDB Atlas:', err));
 
 const contactoSchema = new mongoose.Schema({
     nombre: String,
@@ -24,7 +24,8 @@ const Contacto = mongoose.model('Contacto', contactoSchema);
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));  // Puedes reemplazar esta línea con la siguiente
+// app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -32,19 +33,24 @@ app.get('/', (req, res) => {
 
 app.post('/crear', async (req, res) => {
     try {
-      const { nombre, correo, numero, mensaje, nombreempresa } = req.body;
-      const nuevocontacto = new Contacto({ nombre, correo, numero, mensaje, nombreempresa });
-      await nuevocontacto.save();
-      console.log("guardado")
-      setTimeout(() => {
-        res.redirect('/');
-      }, 3000);
+        const { nombre, correo, numero, mensaje, nombreempresa } = req.body;
+        const nuevocontacto = new Contacto({ nombre, correo, numero, mensaje, nombreempresa });
+        await nuevocontacto.save();
+        console.log("Contacto guardado exitosamente");
+        setTimeout(() => {
+            res.redirect('/');
+        }, 3000);
     } catch (err) {
-      console.error('Error al crear un nuevo contacto:', err);
-      res.status(500).send('Error interno del servidor');
+        console.error('Error al crear un nuevo contacto:', err);
+        res.status(500).send('Error interno del servidor');
     }
-  });
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Error interno del servidor');
+});
 
 app.listen(port, () => {
-    console.log(`servidor en: ${port}`);
+    console.log(`Servidor escuchando en el puerto ${port}`);
 });
