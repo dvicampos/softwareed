@@ -223,7 +223,7 @@ header .textos h3 {
 
 .texto {
 	position: absolute;
-	font-size: 30px;
+	font-size: 100%;
 	color: #03193d;
 	overflow: hidden;
 	transition: all 1s ease;
@@ -321,8 +321,14 @@ footer .copyright {
 	cursor: pointer;
 }
 .contacto-directo{
+	display: flex;
 	text-align: center;
 	margin-bottom: 50px;
+	justify-content: center;
+}
+.contacto-directo .seccionar{
+	display: flex;
+	flex-direction: column;
 }
 .contacto-directo p{
 	margin: 10px;	
@@ -407,18 +413,7 @@ footer .copyright {
     .main .planes .conplanes .plan:last-child {
         width: 90%; /* Ajustar el ancho del último plan en pantallas medianas */
     }
-	.nosotros{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	.nosotros .programador{
-		margin-top: 20px;
-		width: 90%;
-		margin-right: 0px;
-		/* background-color: #000; */
-	}
+	
 }
 
 @media screen and (max-width: 400px) {
@@ -558,43 +553,6 @@ styled-table {
 	margin-right: 10px;
 }
 
-.dashboard {
-	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-}
-
-.nosotros {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 50px;
-}
-
-.programador {
-	width: 45%;
-	height: 500px;
-	margin-right: 5%;
-	padding: 20px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: all 1s ease;
-}
-.programador:hover{
-	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.35);
-	cursor: pointer;
-}
-
-.programador:hover .fotos{
-	width: 20%;
-	transform: scale(1.2);
-}
 .seccionar{
 	display: flex;
 	justify-content: center;
@@ -652,7 +610,13 @@ styled-table {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	background-color: #007bff;
+	/* From https://css.glass */
+background: rgba(253, 253, 253, 0.46);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.8px);
+-webkit-backdrop-filter: blur(9.8px);
+border: 1px solid rgba(253, 253, 253, 1);
 	color: #fff;
 	width: 40px;
 	height: 40px;
@@ -665,7 +629,12 @@ styled-table {
 }
 
 .scroll-to-top:hover {
-	background-color: #0056b3;
+	background: rgba(253, 253, 253, 0.77);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(13.5px);
+-webkit-backdrop-filter: blur(13.5px);
+border: 1px solid rgba(253, 253, 253, 1);
 }
 
 .img-inicio {
@@ -689,4 +658,38 @@ styled-table {
 
 .accordion-item.active .accordion-content {
     display: block;
+}
+.img-contacto{
+	width: 5%;
+}
+/* nosotros  */
+#nosotros {
+    padding: 50px 20px;
+    background: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    border-radius: 10px;
+}
+.nosotros {
+	display: flex;
+	flex-direction: row;
+    gap: 20px;
+}
+#nosotros .seccion {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#nosotros .seccion h2 {
+    font-size: 20px;
+    color: #007BFF;
+    margin-bottom: 10px;
+	text-align: center;
+}
+
+#nosotros .seccion p {
+    font-size: 16px;
+    color: #555;
 }

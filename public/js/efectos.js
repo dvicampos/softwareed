@@ -151,3 +151,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+gsap.from(".contacto-directo", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power4.out",
+    stagger: 0.3 // Añade un retraso entre las animaciones de los elementos secundarios
+  });
